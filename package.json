@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/teddyand/mygraphql#readme",
   "dependencies": {
-    "apollo-server": "^3.13.0",
+    "@apollo/server": "^4.12.0",
     "graphql": "^16.11.0"
   }
 }

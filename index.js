@@ -1,22 +1,25 @@
-const { ApolloServer } = require('apollo-server')
+const { ApolloServer } = require('@apollo/server');
+const { startStandaloneServer } = require('@apollo/server/standalone');
 
 const typeDefs = `
-		type Query {
-			totalPhotos: Int!
-		}
+    type Query {
+        totalPhotos: Int!
+    }
+`;
 
-	`
 const resolvers = {
-	Query: {
-		totalPhotos: () => 42
-	}
-}	
+    Query: {
+        totalPhotos: () => 42
+    }
+};
 
 const server = new ApolloServer({
-	typeDefs,
-	resolvers
-})
+    typeDefs,
+    resolvers
+});
 
-server
-	.listen()
-	.then(({url}) => console.log(`Graphql service running on ${url}`))
+startStandaloneServer(server, {
+    listen: { port: process.env.PORT || 4000 },
+}).then(({ url }) => {
+    console.log(`GraphQL service running on ${url}`);
+});	
