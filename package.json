@@ -1,0 +1,25 @@
+{
+  "name": "mygraphql",
+  "version": "1.0.0",
+  "description": "《learning graphql》",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/teddyand/mygraphql.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/teddyand/mygraphql/issues"
+  },
+  "homepage": "https://github.com/teddyand/mygraphql#readme",
+  "dependencies": {
+    "apollo-server": "^3.13.0",
+    "graphql": "^16.11.0"
+  }
+}
