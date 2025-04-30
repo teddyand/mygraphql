@@ -1,25 +1,28 @@
-const { ApolloServer } = require('@apollo/server');
-const { startStandaloneServer } = require('@apollo/server/standalone');
+import express from 'express';
+import  { ApolloServer, gql } from 'apollo-server-express';
 
-const typeDefs = `
-    type Query {
-        totalPhotos: Int!
-    }
+// 定义GraphQL类型定义（Schema）
+const typeDefs = gql`
+  type Query {
+    hello: String!
+  }
 `;
 
+// 定义解析器函数
 const resolvers = {
-    Query: {
-        totalPhotos: () => 42
-    }
+  Query: {
+    hello: () => 'Hello from Apollo GraphQL Server!',
+  },
 };
 
-const server = new ApolloServer({
-    typeDefs,
-    resolvers
-});
+// 创建Apollo服务器实例
+const server = new ApolloServer({ typeDefs, resolvers });
 
-startStandaloneServer(server, {
-    listen: { port: process.env.PORT || 4000 },
-}).then(({ url }) => {
-    console.log(`GraphQL service running on ${url}`);
-});	
+const app = express();
+await server.start()
+server.applyMiddleware({ app });
+
+const port = process.env.PORT || 4000;
+app.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}${server.graphqlPath}`);
+});
