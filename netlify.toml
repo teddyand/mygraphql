@@ -1,3 +1,13 @@
 [build]
-  command = ""
-  publish = ""
+  command = "node index.js"
+  publish = "." 
+
+
+[functions]
+  included_files = ["**/*.js"]  # 可选，根据项目调整
+
+
+[[redirects]]
+  from = "/*"
+  to = "http://localhost:${process.env.PORT}/:splat"
+  status = 200
