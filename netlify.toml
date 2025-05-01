@@ -1,13 +1,7 @@
 [build]
-  command = ""
-  publish = "." 
-
-
-[functions]
-  included_files = ["**/*.js"]  # 可选，根据项目调整
-
+  functions = "netlify/functions"
 
 [[redirects]]
-  from = "/*"
-  to = "http://localhost:${process.env.PORT}/:splat"
+  from = "/graphql"
+  to = "/.netlify/functions/graphql"
   status = 200
