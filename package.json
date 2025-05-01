@@ -1,0 +1,26 @@
+{
+  "name": "mygraphql",
+  "version": "1.0.0",
+  "description": "《learning graphql》",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/teddyand/mygraphql.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/teddyand/mygraphql/issues"
+  },
+  "homepage": "https://github.com/teddyand/mygraphql#readme",
+  "dependencies": {
+    "@netlify/functions": "^3.1.2",
+    "@types/express": "^5.0.1",
+    "express": "^5.1.0",
+    "serverless-http": "^3.2.0"
+  }
+}
