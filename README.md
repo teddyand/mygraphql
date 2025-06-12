@@ -1,2 +1,0 @@
-# mygraphql
-《learning graphql》
